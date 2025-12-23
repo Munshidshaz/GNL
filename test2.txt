@@ -1,4 +1,0 @@
-this is second file first line
-this is second file second line
-this is second file threed line
-this is second file forth line

@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: munshid <munshid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/19 14:48:52 by munshid           #+#    #+#             */
-/*   Updated: 2025/12/23 19:56:19 by mmohamm2         ###   ########.fr       */
+/*   Updated: 2025/12/23 20:09:17 by mmohamm2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 ssize_t	ft_hasline(char *buffer, char c)
 {
@@ -74,14 +74,14 @@ char	*ft_filereader(int fd, char *buffer)
 char	*get_next_line(int fd)
 {
 	char		*line;
-	static char	*buffer;
+	static char	*buffer[FOPEN_MAX];
 
 	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, 0, 0) < 0)
 		return (NULL);
-	buffer = ft_filereader(fd, buffer);
-	if (!buffer)
+	buffer[fd] = ft_filereader(fd, buffer[fd]);
+	if (!buffer[fd])
 		return (NULL);
-	line = ft_line(buffer);
-	buffer = ft_buff(buffer);
+	line = ft_line(buffer[fd]);
+	buffer[fd] = ft_buff(buffer[fd]);
 	return (line);
 }
