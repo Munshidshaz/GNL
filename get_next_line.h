@@ -11,27 +11,27 @@
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
-#define GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
-#include <unistd.h>
-#include <stdlib.h>
-#include <stddef.h>
-#include <stdint.h>
-#include <fcntl.h>
-#include <stdio.h>
-#include <limits.h>
+# include <unistd.h>
+# include <stdlib.h>
+# include <stddef.h>
+# include <stdint.h>
+# include <fcntl.h>
+# include <stdio.h>
+# include <limits.h>
 
+# define BUFFER_SIZE 10
 
-#define BUFFER_SIZE 10
+size_t	ft_strlen(const char *str);
+int		ft_memmove(char *mem1, char *mem2);
+int		ft_hasline(char *buffer, char c);
 
-char    *get_next_line(int fd);
-size_t  ft_strlen(const char *str);
-void    *ft_calloc(size_t n, size_t size);
-int ft_memmove(char *mem1, char *mem2);
-char    *ft_strjoin(char *s1, char *s2);
-char    *ft_line(char *buffer);
-char    *ft_buff(char *buffer);
-int ft_hasline(char *buffer,char c);
-char    *ft_filereader(int fd);
+char	*get_next_line(int fd);
+void	*ft_calloc(size_t n, size_t size);
+char	*ft_strjoin(char *s1, char *s2);
+char	*ft_line(char *buffer);
+char	*ft_buff(char *buffer);
+char	*ft_filereader(int fd);
 
 #endif

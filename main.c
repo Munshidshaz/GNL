@@ -57,7 +57,7 @@ int main(void)
 	printf("fd : %d Str : %s", fd, str3);
 	printf("fd : %d Str : %s", fd2, str4);
 	
-	// ft_free(4,str1, str2, str3, str4);     
+	ft_free(4,str1, str2, str3, str4);     
 
 
 	return (1);
