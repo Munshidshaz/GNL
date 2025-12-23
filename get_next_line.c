@@ -6,7 +6,7 @@
 /*   By: munshid <munshid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/19 14:48:52 by munshid           #+#    #+#             */
-/*   Updated: 2025/12/22 15:09:09 by munshid          ###   ########.fr       */
+/*   Updated: 2025/12/23 13:04:48 by munshid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,16 +58,13 @@ char    *ft_filereader(int fd)
     rtn = NULL;
     if (fd <0 || BUFFER_SIZE <= 0 || read(fd, 0, 0) < 0)
         return (NULL);
-    while( byte_read > 0)
+    while( (byte_read = read(fd, temp, BUFFER_SIZE)) > 0)
     {
-        byte_read = read(fd, temp, BUFFER_SIZE);
-        if (byte_read == -1)
+        if (byte_read < 0)
         {
-            free(rtn);
-            return (NULL);
-        }
-        if (byte_read == 0)
-            return (NULL);
+			free(rtn);
+			return (NULL);
+		}
         temp[byte_read] = '\0';
         rtn = ft_strjoin(rtn, temp);
         if (!rtn)

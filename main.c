@@ -6,7 +6,7 @@
 /*   By: munshid <munshid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 18:39:11 by munshid           #+#    #+#             */
-/*   Updated: 2025/12/22 15:10:34 by munshid          ###   ########.fr       */
+/*   Updated: 2025/12/23 12:57:33 by munshid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,13 +48,17 @@ int main(void)
 	char *str4;
 
 	str1 = get_next_line(fd);
-	str2 = get_next_line(fd);
+	str2 = get_next_line(fd2);
 	str3 = get_next_line(fd);
-	str4 = get_next_line(fd);
+	str4 = get_next_line(fd2);
 
-	ft_free(4,str1, str2, str3, str4);     
+	printf("fd : %d Str : %s", fd, str1);
+	printf("fd : %d Str : %s", fd2, str2);
+	printf("fd : %d Str : %s", fd, str3);
+	printf("fd : %d Str : %s", fd2, str4);
+	
+	// ft_free(4,str1, str2, str3, str4);     
 
-	free
 
 	return (1);
 }
