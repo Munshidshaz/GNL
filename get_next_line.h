@@ -6,7 +6,7 @@
 /*   By: munshid <munshid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 18:44:05 by munshid           #+#    #+#             */
-/*   Updated: 2025/12/23 19:56:38 by mmohamm2         ###   ########.fr       */
+/*   Updated: 2025/12/29 12:26:17 by mmohamm2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,10 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdint.h>
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 1
+# endif 
 
 size_t	ft_strlen(const char *str);
 size_t	ft_memmove(char *mem1, char *mem2);
