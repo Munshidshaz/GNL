@@ -15,7 +15,9 @@
 
 	The get_next_line() function reads given file until it finds a new line
 	character, create a array for the line and returns pointer to the array.
-	If the fd 0 or Negative value get_next_line returns NULL. 
+	If the fd Negative value get_next_line returns NULL.
+
+	If the fd is 0, it will take stdin as input for the function. 
 	
 	The pointer get_next_line() return can be freed using free(). 
 	

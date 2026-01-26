@@ -6,7 +6,7 @@
 /*   By: munshid <munshid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 18:44:05 by munshid           #+#    #+#             */
-/*   Updated: 2025/12/29 12:28:15 by mmohamm2         ###   ########.fr       */
+/*   Updated: 2026/01/23 15:07:06 by munshid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,9 @@
 
 # ifndef BUFFER_SIZE 
 #  define BUFFER_SIZE 1
+# endif
+# ifndef OPEN_MAX
+#  define OPEN_MAX 1024
 # endif
 
 size_t	ft_strlen(const char *str);

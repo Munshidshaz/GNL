@@ -6,7 +6,7 @@
 /*   By: munshid <munshid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/19 14:48:52 by munshid           #+#    #+#             */
-/*   Updated: 2025/12/23 19:56:19 by mmohamm2         ###   ########.fr       */
+/*   Updated: 2026/01/23 15:13:08 by munshid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,8 +59,9 @@ char	*ft_filereader(int fd, char *buffer)
 		bytes_read = read(fd, temp, BUFFER_SIZE);
 		if (bytes_read == -1)
 		{
-			free (temp);
-			return (NULL);
+			free(buffer);
+			free(temp);
+			return(NULL);
 		}
 		temp[bytes_read] = 0;
 		buffer = ft_strjoin(buffer, temp);
@@ -76,7 +77,7 @@ char	*get_next_line(int fd)
 	char		*line;
 	static char	*buffer;
 
-	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, 0, 0) < 0)
+	if (fd < 0 || BUFFER_SIZE <= 0 || fd >= OPEN_MAX)
 		return (NULL);
 	buffer = ft_filereader(fd, buffer);
 	if (!buffer)
